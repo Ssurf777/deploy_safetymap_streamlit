@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import folium
-from streamlit_folium import folium_static
+#from streamlit_folium import folium_static
 import pandas as pd
 
 sales_office = pd.DataFrame(
