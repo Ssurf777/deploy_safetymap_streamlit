@@ -1,6 +1,6 @@
-import streamlit as st
-import pandas as pd
-import numpy as np
+import streamlit
+import pandas
+import numpy
 import folium
 import folium_static
-import pandas as pd
+import pandas
