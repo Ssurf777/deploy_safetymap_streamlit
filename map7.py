@@ -75,10 +75,10 @@ with st.sidebar:
     #df3
 #-------------------------------------------------------------
     workday=st.selectbox(
-	'workday',
-	('No','Yes'))
+	'select workday or weekend',
+	('weekend','workday'))
 
-    if workday=='Yes':
+    if workday=='workday':
         df4=df3[(df3["weekday"] >=2) & (df3["weekday"] <=6)]
         cdf=df2[(df2["weekday"] >=2) & (df2["weekday"] <=6)]
     else:
@@ -115,14 +115,14 @@ with st.sidebar:
 #-------------------------------------------------------------
     type=st.selectbox(
 	'select type',
-	('vechicle<>vechicle','person<>vechicle','vechicle_only'))
-    if type=='vechicle<>vechicle':
+	('vehicle<>vehicle','person<>vehicle','vehicle_only'))
+    if type=='vehicle<>vehicle':
         df7=df6[(df6["cont"] ==21)]
         cdf=cdf[(cdf["cont"] ==21)]
-    if type=='vechicle_only':
+    if type=='vehicle_only':
         df7=df6[(df6["cont"] ==41)]
         cdf=cdf[(cdf["cont"] ==41)]        
-    if type=='person<>vechicle':
+    if type=='person<>vehicle':
         df7=df6[(df6["cont"] ==1)]
         cdf=cdf[(cdf["cont"] ==1)]
     #df7
