@@ -162,7 +162,7 @@ ndarray = np.array([[0, 0],
                     [12, cdf[cdf["month"]==12].count().min()],
                    ])
 summary=pd.DataFrame(ndarray, columns=["month", "count"])
-summary.loc[:,["month"]]
+#summary.loc[:,["month"]]
 #st.line_chart(summary)
 
 st.header("number of accidents")
