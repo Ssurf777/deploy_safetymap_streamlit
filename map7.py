@@ -147,52 +147,52 @@ with st.sidebar:
 #st.write("Count 12",cdf[cdf["month"]==12].count().min())
 #st.write(cdf.describe())
 
-#ndarray = np.array([[0, 0],
-#                    [1, cdf[cdf["month"]==1].count().min()],
-#                    [2, cdf[cdf["month"]==2].count().min()],
-#                    [3, cdf[cdf["month"]==3].count().min()],
-#                    [4, cdf[cdf["month"]==4].count().min()],
-#                    [5, cdf[cdf["month"]==5].count().min()],
-#                    [6, cdf[cdf["month"]==6].count().min()],
-#                    [7, cdf[cdf["month"]==7].count().min()],
-#                    [8, cdf[cdf["month"]==8].count().min()],
-#                    [9, cdf[cdf["month"]==9].count().min()],
-#                    [10, cdf[cdf["month"]==10].count().min()],
-#                    [11, cdf[cdf["month"]==11].count().min()],
-#                    [12, cdf[cdf["month"]==12].count().min()],
-#                   ])
-#summary=pd.DataFrame(ndarray, columns=["month", "count"])
-#summary.loc[:,["month"]]
+ndarray = np.array([[0, 0],
+                    [1, cdf[cdf["month"]==1].count().min()],
+                    [2, cdf[cdf["month"]==2].count().min()],
+                    [3, cdf[cdf["month"]==3].count().min()],
+                    [4, cdf[cdf["month"]==4].count().min()],
+                    [5, cdf[cdf["month"]==5].count().min()],
+                    [6, cdf[cdf["month"]==6].count().min()],
+                    [7, cdf[cdf["month"]==7].count().min()],
+                    [8, cdf[cdf["month"]==8].count().min()],
+                    [9, cdf[cdf["month"]==9].count().min()],
+                    [10, cdf[cdf["month"]==10].count().min()],
+                    [11, cdf[cdf["month"]==11].count().min()],
+                    [12, cdf[cdf["month"]==12].count().min()],
+                   ])
+summary=pd.DataFrame(ndarray, columns=["month", "count"])
+summary.loc[:,["month"]]
 #st.line_chart(summary)
-#st.bar_chart(summary.loc[:,["count"]])
 
 st.header("number of accidents")
 st.write("settings",daynight)
 st.write("settings",weather)
 st.write("settings",type)
+st.bar_chart(summary.loc[:,["count"]])
 
-x = [1, 2, 3, 4, 5 ,6,7,8,9,10,11,12]
-y = [cdf[cdf["month"]==1].count().min(),
-     cdf[cdf["month"]==2].count().min(),
-     cdf[cdf["month"]==3].count().min(),
-     cdf[cdf["month"]==4].count().min(),
-     cdf[cdf["month"]==5].count().min(),
-     cdf[cdf["month"]==6].count().min(),
-     cdf[cdf["month"]==7].count().min(),
-     cdf[cdf["month"]==8].count().min(),
-     cdf[cdf["month"]==9].count().min(),
-     cdf[cdf["month"]==10].count().min(),
-     cdf[cdf["month"]==11].count().min(),
-     cdf[cdf["month"]==12].count().min()]
+#x = [1, 2, 3, 4, 5 ,6,7,8,9,10,11,12]
+#y = [cdf[cdf["month"]==1].count().min(),
+#     cdf[cdf["month"]==2].count().min(),
+#     cdf[cdf["month"]==3].count().min(),
+#     cdf[cdf["month"]==4].count().min(),
+#     cdf[cdf["month"]==5].count().min(),
+#     cdf[cdf["month"]==6].count().min(),
+#     cdf[cdf["month"]==7].count().min(),
+#     cdf[cdf["month"]==8].count().min(),
+#     cdf[cdf["month"]==9].count().min(),
+#     cdf[cdf["month"]==10].count().min(),
+#     cdf[cdf["month"]==11].count().min(),
+#     cdf[cdf["month"]==12].count().min()]
 
-p = figure(
-    title='Trend',
-    height=250,
-    x_axis_label='month',
-    y_axis_label='number of accidents')
+#p = figure(
+#    title='Trend',
+#    height=250,
+#    x_axis_label='month',
+#    y_axis_label='number of accidents')
 
-p.line(x, y, legend_label='Trend', line_width=10)
-st.bokeh_chart(p, use_container_width=True)
+#p.line(x, y, legend_label='Trend', line_width=10)
+#st.bokeh_chart(p, use_container_width=True)
 
 
 AreaMarker(df8,m)
