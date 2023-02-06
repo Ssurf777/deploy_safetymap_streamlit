@@ -171,7 +171,7 @@ st.header("number of accidents")
 st.write("settings",daynight)
 st.write("settings",weather)
 st.write("settings",type)
-st.bar_chart(summary.loc[:,["count"]])
+#st.bar_chart(summary.loc[:,["count"]])
 
 
 #--------------------------------------------------------------
