@@ -4,7 +4,9 @@ import numpy as np
 import folium
 from streamlit_folium import folium_static
 import pandas as pd
+import matplotlib.pyplot as plt
 #from bokeh.plotting import figure
+
 
 sales_office = pd.DataFrame(
     data=[[35.05743382079721, 137.1549853462676],
@@ -171,28 +173,36 @@ st.write("settings",weather)
 st.write("settings",type)
 st.bar_chart(summary.loc[:,["count"]])
 
-#x = [1, 2, 3, 4, 5 ,6,7,8,9,10,11,12]
-#y = [cdf[cdf["month"]==1].count().min(),
-#     cdf[cdf["month"]==2].count().min(),
-#     cdf[cdf["month"]==3].count().min(),
-#     cdf[cdf["month"]==4].count().min(),
-#     cdf[cdf["month"]==5].count().min(),
-#     cdf[cdf["month"]==6].count().min(),
-#     cdf[cdf["month"]==7].count().min(),
-#     cdf[cdf["month"]==8].count().min(),
-#     cdf[cdf["month"]==9].count().min(),
-#     cdf[cdf["month"]==10].count().min(),
-#     cdf[cdf["month"]==11].count().min(),
-#     cdf[cdf["month"]==12].count().min()]
 
-#p = figure(
-#    title='Trend',
-#    height=250,
-#    x_axis_label='month',
-#    y_axis_label='number of accidents')
+#--------------------------------------------------------------
+y = [1, 2, 3, 4, 5,6,7,8,9,10,11,12]
+n = [cdf[cdf["month"]==1].count().min(),
+     cdf[cdf["month"]==2].count().min(),
+     cdf[cdf["month"]==3].count().min(),
+     cdf[cdf["month"]==4].count().min(),
+     cdf[cdf["month"]==5].count().min(),
+     cdf[cdf["month"]==6].count().min(),
+     cdf[cdf["month"]==7].count().min(),
+     cdf[cdf["month"]==8].count().min(),
+     cdf[cdf["month"]==9].count().min(),
+     cdf[cdf["month"]==10].count().min(),
+     cdf[cdf["month"]==11].count().min(),
+     cdf[cdf["month"]==12].count().min()]
+plt.style.use("ggplot")
+def set_exoplanets(ax):
+    ax.set_title("Trend", fontsize=3)
+    ax.set_xlabel("Month", fontsize=3)
+    ax.set_ylabel("Number of accidents", fontsize=3)
+    ax.tick_params(axis='x', labelsize=3)
+    ax.tick_params(axis='y', labelsize=3)
 
-#p.line(x, y, legend_label='Trend', line_width=10)
-#st.bokeh_chart(p, use_container_width=True)
+fig = plt.figure(figsize=(2,1))
+ax=fig.add_subplot(111)
+set_exoplanets(ax)
+ax.bar(y, n)
+
+st.pyplot(fig)
+#--------------------------------------------------
 
 
 AreaMarker(df8,m)
