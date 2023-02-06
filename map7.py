@@ -190,13 +190,13 @@ n = [cdf[cdf["month"]==1].count().min(),
      cdf[cdf["month"]==12].count().min()]
 plt.style.use("ggplot")
 def set_exoplanets(ax):
-    ax.set_title("Trend", fontsize=3)
-    ax.set_xlabel("Month", fontsize=3)
-    ax.set_ylabel("Number of accidents", fontsize=3)
-    ax.tick_params(axis='x', labelsize=3)
-    ax.tick_params(axis='y', labelsize=3)
+    ax.set_title("Trend", fontsize=5)
+    ax.set_xlabel("Month", fontsize=5)
+    ax.set_ylabel("Number of accidents", fontsize=5)
+    ax.tick_params(axis='x', labelsize=5)
+    ax.tick_params(axis='y', labelsize=5)
 
-fig = plt.figure(figsize=(2,1))
+fig = plt.figure(figsize=(4,2))
 ax=fig.add_subplot(111)
 set_exoplanets(ax)
 ax.bar(y, n)
