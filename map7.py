@@ -4,7 +4,7 @@ import numpy as np
 import folium
 from streamlit_folium import folium_static
 import pandas as pd
-from bokeh.plotting import figure
+#from bokeh.plotting import figure
 
 sales_office = pd.DataFrame(
     data=[[35.05743382079721, 137.1549853462676],
