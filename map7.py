@@ -29,7 +29,7 @@ def AreaMarker(df,m):
 
         folium.Marker(
             location=[r.x, r.y],
-            popup=index,
+            popup=[r.p],
             icon=folium.Icon(color="red")
         ).add_to(m)
 
@@ -50,7 +50,8 @@ AreaMarker_home(sales_office,m)
 #7:weekday
 #8:x
 #9:y
-df=pd.read_csv("honhyo_192021.csv",skiprows=0)
+#10:p for popup
+df=pd.read_csv("honhyo_192021_pop.csv",skiprows=0)
 #df
 #--------------------------------------------------------------
 with st.sidebar:
@@ -132,7 +133,7 @@ with st.sidebar:
 
 #-------------------------------------------------------------
 
-    df8=df7.loc[:,['x','y']]
+    df8=df7.loc[:,['x','y','p']]
     st.write("Counter",df8["x"].count())
 
 #st.write("Count 1",cdf[cdf["month"]==1].count().min())
@@ -168,9 +169,9 @@ summary=pd.DataFrame(ndarray, columns=["month", "count"])
 #st.line_chart(summary)
 
 st.header("number of accidents")
-st.write("settings",daynight)
-st.write("settings",weather)
-st.write("settings",type)
+#st.write("settings",daynight)
+#st.write("settings",weather)
+#st.write("settings",type)
 #st.bar_chart(summary.loc[:,["count"]])
 
 
@@ -203,6 +204,7 @@ ax.bar(y, n)
 
 st.pyplot(fig)
 #--------------------------------------------------
+st.write("settings---->",workday,"---->",daynight,"---->",weather,"---->",type)
 
 
 AreaMarker(df8,m)
