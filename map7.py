@@ -204,7 +204,7 @@ ax.bar(y, n)
 
 st.pyplot(fig)
 #--------------------------------------------------
-st.text("settings---->",workday,"---->",daynight,"---->",weather,"---->",type)
+st.caption("settings---->",workday,"---->",daynight,"---->",weather,"---->",type)
 
 st.header("Map")
 AreaMarker(df8,m)
