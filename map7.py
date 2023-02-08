@@ -204,9 +204,9 @@ ax.bar(y, n)
 
 st.pyplot(fig)
 #--------------------------------------------------
-st.caption("settings---->",workday,"---->",daynight,"---->",weather,"---->",type)
 
 st.header("Map")
 AreaMarker(df8,m)
 folium_static(m)
 st.write("Data by https://www.npa.go.jp/publications/statistics/koutsuu/opendata/index_opendata.html")
+st.write("settings---->",workday,"---->",daynight,"---->",weather,"---->",type)
