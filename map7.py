@@ -168,7 +168,7 @@ summary=pd.DataFrame(ndarray, columns=["month", "count"])
 #summary.loc[:,["month"]]
 #st.line_chart(summary)
 
-st.header("number of accidents")
+st.header("Trend analysis")
 #st.write("settings",daynight)
 #st.write("settings",weather)
 #st.write("settings",type)
@@ -204,9 +204,9 @@ ax.bar(y, n)
 
 st.pyplot(fig)
 #--------------------------------------------------
-st.write("settings---->",workday,"---->",daynight,"---->",weather,"---->",type)
+st.text("settings---->",workday,"---->",daynight,"---->",weather,"---->",type)
 
-
+st.header("Map")
 AreaMarker(df8,m)
 folium_static(m)
 st.write("Data by https://www.npa.go.jp/publications/statistics/koutsuu/opendata/index_opendata.html")
