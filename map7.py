@@ -51,7 +51,7 @@ AreaMarker_home(sales_office,m)
 #8:x
 #9:y
 #10:p for popup
-df=pd.read_csv("honhyo_192021_pop.csv",skiprows=0)
+df=pd.read_csv("honhyo_192021_pop.csv",encoding="shift-jis",skiprows=0)
 #df
 #--------------------------------------------------------------
 with st.sidebar:
