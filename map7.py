@@ -60,7 +60,7 @@ with st.sidebar:
     pref=st.selectbox(
         'select Prefecture',
         ('Aichi','Mie','Gifu','Shizuoka'))
-    st.write(pref)
+    #st.write(pref)
     if pref=='Aichi': 
        df2=df[df["pref"]==int(54)]
     if pref=='Gifu': 
@@ -74,7 +74,7 @@ with st.sidebar:
     month = st.selectbox(
           'select Month',
           ('1','2','3','4','5','6','7','8','9','10','11','12'))
-    st.write(int(month))
+    #st.write(int(month))
     df3=df2[df2["month"]==int(month)]
     #df3
 #-------------------------------------------------------------
