@@ -24,12 +24,12 @@ def AreaMarker_home(df,m):
             icon=folium.Icon(icon="home",color="pink")
         ).add_to(m)
 
-def AreaMarker(df,m):
+def AreaMarker(df,a,b,c,m):
     for index, r in df.iterrows(): 
 
         folium.Marker(
             location=[r.x, r.y],
-            popup=[r.p],
+            popup=str(a)+str(r.x)+","+str(r.y)+str(b)+str(r.p)+str(c),
             icon=folium.Icon(color="red")
         ).add_to(m)
 
@@ -204,9 +204,13 @@ ax.bar(y, n)
 
 st.pyplot(fig)
 #--------------------------------------------------
+#google map street view
+urlt="<a href =""https://www.google.com/maps/@?api=1&map_action=pano&parameters&viewpoint="
+urlb=" target=""_blank"" rel=""noopener noreferrer"">"
+urlb2="<br>LINK </a>"
 
 st.header("Map")
-AreaMarker(df8,m)
+AreaMarker(df8,urlt,urlb,urlb2,m)
 folium_static(m)
 st.write("Data by https://www.npa.go.jp/publications/statistics/koutsuu/opendata/index_opendata.html")
 st.write("settings---->",workday,"---->",daynight,"---->",weather,"---->",type)
