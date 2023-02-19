@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 sales_office = pd.DataFrame(
     data=[[35.05743382079721, 137.1549853462676],
           [35.22378324365575, 138.89725244402015]],
-    index=["Honsya","HigashiFuji"],
+    index=["_","_"],
     columns=["x","y"]
 )
 #sales_office
@@ -33,8 +33,8 @@ def AreaMarker(df,a,b,c,m):
             icon=folium.Icon(color="red")
         ).add_to(m)
 
-m = folium.Map(location=[35.05743382079721, 137.1549853462676], zoom_start=12)
-AreaMarker_home(sales_office,m)
+#m = folium.Map(location=[35.05743382079721, 137.1549853462676], zoom_start=12)
+#AreaMarker_home(sales_office,m)
 #folium_static(m)
 
 
@@ -63,12 +63,20 @@ with st.sidebar:
     #st.write(pref)
     if pref=='Aichi': 
        df2=df[df["pref"]==int(54)]
+       m = folium.Map(location=[35.05743382079721, 137.1549853462676], zoom_start=12)
+       AreaMarker_home(sales_office,m)
     if pref=='Gifu': 
        df2=df[df["pref"]==int(53)]
+       m = folium.Map(location=[35.39115917534303, 136.72351981260852], zoom_start=10)
+       AreaMarker_home(sales_office,m)
     if pref=='Mie': 
        df2=df[df["pref"]==int(55)]
+       m = folium.Map(location=[34.71859388942724, 136.50748850848515], zoom_start=10)
+       AreaMarker_home(sales_office,m)
     if pref=='Shizuoka': 
        df2=df[df["pref"]==int(49)]
+       m = folium.Map(location=[35.22378324365575, 138.89725244402015], zoom_start=10)
+       AreaMarker_home(sales_office,m)
     #df2
 #-------------------------------------------------------------
     month = st.selectbox(
