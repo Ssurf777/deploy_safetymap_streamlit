@@ -1,9 +1,11 @@
 # Visualization Application for National Police Agency Accident Statistics
 
 # Application Features
-Trend analysis of accidents per month by specifying conditions such as weather, time of day, weekday/weekend
-Visualization of accident locations under specified conditions
-Access to Google Street View of accident locations
+　◎Trend analysis of accidents per month by specifying conditions such as weather, time of day, weekday/weekend
+
+　◎Visualization of accident locations under specified conditions
+
+　◎Access to Google Street View of accident locations
 
 
 # Installation
