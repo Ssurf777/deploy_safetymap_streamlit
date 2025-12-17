@@ -32,3 +32,6 @@ T. Shimokawa
 
 # Comment
 We hope this application will contribute to the prevention of accidents.
+
+https://streamlit.io/
+https://ssurf777-deploy-safetymap-streamlit-map7-r5ibzc.streamlit.app/
